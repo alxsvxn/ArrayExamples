@@ -6,6 +6,12 @@ Option Compare Text
 Module ArrayExamples
 
     Sub Main()
+
+        MultiDimensionalArray()
+
+    End Sub
+    Sub simpleArrays()
+
         'Arrays are cool
 
         Dim fruits(5) As String
@@ -28,7 +34,20 @@ Module ArrayExamples
             Console.WriteLine(names(i))
         Next
 
-
     End Sub
 
+    Sub MultiDimensionalArray()
+
+        Dim students(14, 2) As Single
+        Dim classes() As String = {"Math", "History", "Art"}
+        Dim somethingElse(,) As Integer = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+        Dim threeDimensionalArray(,,) As Integer = {{{1}, {2}, {3}}, {{4}, {5}, {6}}, {{7}, {8}, {9}}}
+
+        students(0, 0) = 75.24
+        students(0, 1) = 77.91
+        students(0, 2) = 99.28
+
+        Console.WriteLine()
+
+    End Sub
 End Module
