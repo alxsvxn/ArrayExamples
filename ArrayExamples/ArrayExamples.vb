@@ -7,7 +7,8 @@ Module ArrayExamples
 
     Sub Main()
 
-        MultiDimensionalArray()
+        'MultiDimensionalArray()
+        TestRandominator()
 
     End Sub
     Sub simpleArrays()
@@ -50,4 +51,30 @@ Module ArrayExamples
         Console.WriteLine()
 
     End Sub
+
+    Sub TestRandominator()
+
+        Dim jellyBeanCounter(20) As Integer
+
+        For i = 1 To 100
+
+            jellyBeanCounter(RandomNumberBetween(3, 10)) += 1
+
+        Next
+
+        For i = LBound(jellyBeanCounter) To UBound(jellyBeanCounter)
+
+            Console.WriteLine(jellyBeanCounter(i))
+        Next
+
+    End Sub
+
+    Function RandomNumberBetween(max As Integer, min As Integer) As Integer
+        Dim temp As Single
+        Randomize()
+        temp = Rnd()
+        temp *= max - min
+        temp += min
+        Return CInt(temp)
+    End Function
 End Module
